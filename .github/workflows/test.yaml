@@ -21,7 +21,10 @@ jobs:
       - name: Test Coverage
         run: |
           go test -coverprofile=coverage.out ./...
-          go tool cover -func=coverage.out
+          echo '### Test Coverage (functions)' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          go tool cover -func=coverage.out >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
   build:
     runs-on: ubuntu-latest
     needs: test
