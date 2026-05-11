@@ -3,3 +3,9 @@ services:
     image: chon26909/demo-deploy-api:latest
     container_name: demo-deploy-api-chon
     restart: unless-stopped
+    networks:
+      - app
+
+networks:
+  app:
+    external: true
