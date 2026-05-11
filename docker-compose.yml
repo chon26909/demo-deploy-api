@@ -1,5 +1,5 @@
 services:
-  tuya-api:
-    image: ${DOCKER_IMAGE}:latest
-    container_name: demo-deploy-api
+  demo-deploy-api-chon:
+    image: chon26909/demo-deploy-api:latest
+    container_name: demo-deploy-api-chon
     restart: unless-stopped
